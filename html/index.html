@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Richard Jameson - Cybersecurity Enthusiast with expertise in ethical hacking, network security, and incident response.">
+    <meta name="keywords" content="Cybersecurity, Ethical Hacking, Network Security, Cyber Threats, Incident Response">
+    <meta name="author" content="Richard Jameson">
+    <title>Richard Jameson - Cybersecurity Enthusiast</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <span id="typewriter-text">Richard Jameson - Cybersecurity Enthusiast</span>
+    </header>
+    
+    <div class="container">
+        
+        <div class="section">
+            <h2>Personal Statement</h2>
+            <p><strong>A proactive and energetic cybersecurity enthusiast</strong> with a solid educational foundation and hands-on experience. 
+            Passionate about <strong>safeguarding digital assets</strong> and eager to apply my cybersecurity skills in a dynamic role. 
+            I thrive in team environments, deliver high-quality results on time, and communicate effectively both in writing and verbally. 
+            Seeking an internship or graduate role where I can apply my expertise in cybersecurity in real-world scenarios.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Certifications</h2>
+            <ul>
+                <li>✅ Cisco IT Essentials: PC Hardware and Software – Netcom Training (2024)</li>
+                <li>✅ ILP Infrastructure Technician (DRF) Mid – Netcom Training (2024)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Work Experience</h2>
+            <p><strong>Operational Support Officer - Serco</strong> (October 2024 - Present)</p>
+            <ul>
+                <li>📌 Responding to and resolving customer contacts professionally and efficiently.</li>
+                <li>🔒 Managing and protecting sensitive customer information in line with legislation.</li>
+                <li>🛡️ Resolving customer dissatisfaction at the first point of contact.</li>
+                <li><strong>👨‍🏫 Training & Mentorship:</strong> Trusted by management to <strong>train groups of employees</strong> on risk assessment processes.</li>
+            </ul>
+        </div>
+        
+        
+        <div class="section">
+            <h2>Work Experience</h2>
+            <p><strong>Operational Support Officer - Serco</strong> (2024 - Present)</p>
+            <ul>
+                <li>Conducted risk assessments and ensured compliance with security protocols.</li>
+                <li>Trained employees on cybersecurity best practices.</li>
+                <li>Provided customer support and incident resolution.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Education</h2>
+            <p>BSc (Hons) Cyber Security - Manchester Metropolitan University (2:1)</p>
+        </div>
+        
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="project">
+                <img src="cybersecurity-game.png" alt="Cybersecurity Game">
+                <p><strong>Cybersecurity Game Development:</strong> Created an interactive game to teach cybersecurity awareness.</p>
+            </div>
+            <div class="project">
+                <img src="network-simulation.png" alt="Network Security Simulation">
+                <p><strong>Network Security Simulations:</strong> Used Packet Tracer to design and analyze network security.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Portfolio</h2>
+            <p>Check out my projects on GitHub: <a href="https://github.com/your-github-profile" target="_blank">My GitHub</a></p>
+        </div>
+        
+        <div class="section">
+            <h2>Contact</h2>
+
+            <!-- Modern Email Button -->
+            <a href="mailto:richardjameson15@gmail.com" class="email-button">
+                📧 Email Me
+            </a>
+
+            <!-- Modern LinkedIn Button -->
+            <a href="https://www.linkedin.com/in/richard-jameson-06209b18a/" target="_blank" class="linkedin-button">
+                <img src="linkedin-logo.png" alt="LinkedIn"> Connect on LinkedIn
+            </a>
+        </div>
+    </div>
+
+    <!-- Settings Cogwheel Button (Top Right) -->
+    <button id="settings-toggle" class="settings-button" onclick="toggleSettings()">
+        ⚙️
+    </button>
+
+    <!-- Chatbot Section Introduction -->
+    <div class="chat-section">
+        <h2>🤖 AI Assistants</h2>
+        <p>Welcome to my AI-powered assistants! Choose the chatbot that best suits your needs:</p>
+
+        <!-- Explanation for Career Assistant -->
+        <div class="chat-info">
+            <h3>💬 Career Assistant</h3>
+            <p>Ask me about my <strong>CV, work experience, skills, and availability.</strong> Perfect for recruiters and hiring managers.</p>
+            <button id="chat-toggle-1" class="chat-button">💬 Talk to Career Assistant</button>
+        </div>
+
+        <!-- Explanation for Cybersecurity Assistant -->
+        <div class="chat-info">
+            <h3>🔒 Cybersecurity Assistant</h3>
+            <p>Ask me about <strong>cybersecurity, ethical hacking, and technical skills.</strong> Ideal for cybersecurity professionals and technical recruiters.</p>
+            <button id="chat-toggle-2" class="chat-button">🔒 Talk to Cybersecurity Assistant</button>
+        </div>
+    </div>
+
+    <!-- Chatbot 1 Box -->
+    <div id="chat-container-1" class="chat-container">
+        <div class="chat-header">
+            <h3>Career Assistant</h3>
+            <button onclick="closeChat(1)" class="close-chat">&times;</button>
+        </div>
+        <div id="chat-box-1" class="chat-box"></div>
+        <input type="text" id="user-input-1" placeholder="Ask about my CV, experience..." onkeypress="handleKeyPress(event, 1)">
+        <button onclick="sendMessage(1)">Send</button>
+    </div>
+
+    <!-- Chatbot 2 Box -->
+    <div id="chat-container-2" class="chat-container">
+        <div class="chat-header">
+            <h3>Cybersecurity Assistant</h3>
+            <button onclick="closeChat(2)" class="close-chat">&times;</button>
+        </div>
+        <div id="chat-box-2" class="chat-box"></div>
+        <input type="text" id="user-input-2" placeholder="Ask about security, hacking..." onkeypress="handleKeyPress(event, 2)">
+        <button onclick="sendMessage(2)">Send</button>
+    </div>
+
+    <!-- Settings Panel (Hidden by Default) -->
+    <div id="settings-panel" class="settings-panel">
+        <h2>Settings</h2>
+        <button class="theme-toggle-button" onclick="toggleTheme()">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contact Me</h2>
+            <p>Thank you for reaching out! I'll get back to you soon.</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()">⬆</button>
+
+    <div class="contact-container">
+        <!-- Contact Form Section -->
+        <div class="contact-form">
+            <h2>📩 Get in Touch</h2>
+            <p>Have a question? Feel free to reach out!</p>
+    
+            <form action="https://formspree.io/f/xeoekzrb" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    
+                <button type="submit" class="contact-button">Send Message</button>
+
+                <!-- Success Message Box (Hidden by Default) -->
+<div id="success-message" class="success-message">
+    ✅ Message Sent! I'll get back to you soon.
+</div>
+
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Richard Jameson. All rights reserved.
+    </footer>
+    
+
+</body>
+</html>
+
+
+
+
+
+
+

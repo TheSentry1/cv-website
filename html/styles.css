@@ -1,0 +1,752 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+}
+
+/* Personal Statement Styling */
+.section h2 {
+    font-size: 22px;
+    color: #0077B5;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Make Certifications Stand Out */
+.certifications-section {
+    background: #16213e;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+}
+
+.certifications-section li {
+    list-style: none;
+    font-size: 18px;
+    color: white;
+    padding: 5px 0;
+}
+
+/* Make Technical Skills More Eye-Catching */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    text-align: center;
+}
+
+.skills-grid div {
+    background: #0077B5;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.4);
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: #16213e;
+    box-shadow: 0px 0px 20px #0f3460;
+    border-radius: 10px;
+}
+
+/* Email Button */
+.email-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    background: #D44638;
+    color: white;
+}
+
+.email-button:hover {
+    background: #A13228;
+    transform: scale(1.05);
+}
+
+/* LinkedIn Button */
+.linkedin-button {
+    background: #0077B5;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+}
+
+.linkedin-button img {
+    width: 22px;
+    height: 22px;
+}
+
+.linkedin-button:hover {
+    background: #005582;
+    transform: scale(1.05);
+}
+
+/* Modern Toggle Dark/Light Mode Button */
+.theme-toggle-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background: linear-gradient(45deg, #3a3a3a, #555);
+    color: white;
+    box-shadow: 0px 4px 8px rgba(85, 85, 85, 0.4);
+    gap: 10px;
+}
+
+.theme-toggle-button:hover {
+    background: linear-gradient(45deg, #222, #444);
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(85, 85, 85, 0.6);
+}
+
+/* Light Mode Style */
+.light-mode .theme-toggle-button {
+    background: linear-gradient(45deg, #0077B5, #0099E6);
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.4);
+}
+
+.light-mode .theme-toggle-button:hover {
+    background: linear-gradient(45deg, #005582, #0077B5);
+    box-shadow: 0px 6px 12px rgba(0, 119, 181, 0.6);
+}
+
+/* Settings Button (Cogwheel Icon in Top Right) */
+.settings-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    color: white;
+}
+
+.settings-button:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Settings Panel (Hidden by Default, now smoother) */
+.settings-panel {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    background: #16213e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    pointer-events: none; /* Prevent clicks when hidden */
+}
+
+/* Show the Panel when Active */
+.settings-panel.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Light Mode Adjustments */
+.light-mode .settings-button {
+    color: black;
+}
+
+.light-mode .settings-panel {
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.4);
+}
+/* Apply Dark Mode to the Whole Page */
+.light-mode {
+    background: #f4f4f4;
+    color: #222;
+}
+
+/* Apply Dark Mode to All Sections */
+.light-mode .container,
+.light-mode .settings-panel,
+.light-mode .section {
+    background: white;
+    color: black;
+}
+
+/* Ensure Buttons and Text Colors Update Correctly */
+.light-mode .theme-toggle-button {
+    background: linear-gradient(45deg, #0077B5, #0099E6);
+    color: white;
+}
+
+.light-mode .theme-toggle-button:hover {
+    background: linear-gradient(45deg, #005582, #0077B5);
+}
+
+.light-mode .settings-button {
+    color: black;
+}
+
+.light-mode .linkedin-button {
+    background: #0077B5;
+}
+
+.light-mode .email-button {
+    background: #D44638;
+}
+
+/* Chat Button (Floating at Bottom) */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0077B5;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+}
+
+.chat-button:hover {
+    background: #005582;
+    transform: scale(1.05);
+}
+
+/* Chat Container */
+.chat-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: #16213e;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0077B5;
+    padding: 8px;
+    border-radius: 8px 8px 0 0;
+}
+
+.chat-header h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Close Chat Button */
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Chat Messages Box */
+.chat-box {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* User Input */
+#user-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Send Button */
+.chat-container button {
+    margin-top: 5px;
+    padding: 8px;
+    background: #0077B5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Chat Buttons */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    background: #0077B5;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+}
+
+#chat-toggle-1 {
+    right: 120px;
+}
+
+#chat-toggle-2 {
+    right: 20px;
+}
+
+.chat-button:hover {
+    background: #005582;
+    transform: scale(1.05);
+}
+
+/* Chat Containers */
+.chat-container {
+    position: fixed;
+    bottom: 80px;
+    width: 300px;
+    max-width: 90%; /* Makes it responsive */
+    background: #16213e;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#chat-container-1 {
+    right: 120px;
+}
+
+#chat-container-2 {
+    right: 20px;
+}
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0077B5;
+    padding: 8px;
+    border-radius: 8px 8px 0 0;
+}
+
+.chat-header h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Close Button */
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Chat Box */
+.chat-box {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Send Button */
+.chat-container button {
+    margin-top: 5px;
+    padding: 8px;
+    background: #0077B5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-container button:hover {
+    background: #005582;
+}
+
+/* Responsive Fix for Smaller Screens */
+@media (max-width: 600px) {
+    .chat-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #chat-toggle-1 {
+        right: 80px;
+    }
+
+    #chat-toggle-2 {
+        right: 10px;
+    }
+
+    .chat-container {
+        width: 250px;
+    }
+}
+
+/* Chat Buttons */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    width: 150px; /* Fix button width */
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    text-align: center;
+}
+
+/* Position Chatbot 1 Button (Move it slightly right) */
+#chat-toggle-1 {
+    left: 50px; /* Better spacing */
+}
+
+/* Position Chatbot 2 Button (Keep it on the right) */
+#chat-toggle-2 {
+    right: 50px;
+}
+
+.chat-button:hover {
+    background: #005582;
+    transform: scale(1.05);
+}
+
+/* Chat Section (Title + Descriptions) */
+.chat-section {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 20px;
+    background: #16213e;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+}
+
+/* Chatbot Descriptions */
+.chat-info {
+    margin: 20px 0;
+    padding: 15px;
+    background: #1a1a2e;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px rgba(0, 119, 181, 0.3);
+}
+
+.chat-info h3 {
+    font-size: 18px;
+    color: #0077B5;
+}
+
+.chat-info p {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Chat Buttons */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    width: 150px;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    text-align: center;
+}
+
+#chat-toggle-1 {
+    left: 50px;
+    background: #0077B5;
+}
+
+#chat-toggle-2 {
+    right: 50px;
+    background: #28a745;
+}
+
+.chat-button:hover {
+    transform: scale(1.05);
+}
+
+/* Chat Containers */
+.chat-container {
+    position: fixed;
+    bottom: 80px;
+    width: 300px;
+    max-width: 90%;
+    background: #16213e;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#chat-container-1 {
+    left: 50px;
+}
+
+#chat-container-2 {
+    right: 50px;
+}
+
+/* Chat Header (Default for Career Assistant - Blue) */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0077B5; /* Blue for Career Assistant */
+    padding: 8px;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Cybersecurity Assistant (Green Theme) */
+#chat-container-2 .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #28a745; /* Green for Cybersecurity Assistant */
+    padding: 8px;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Default Close Button (Career Assistant - Blue Theme) */
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Cybersecurity Assistant (Green Theme) - Matches Background */
+#chat-container-2 .close-chat {
+    background: none;
+    border: none;
+    color: white; /* Keep white so it's visible */
+}
+
+
+
+/* Chat Box */
+.chat-box {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Send Button */
+.chat-container button {
+    margin-top: 5px;
+    padding: 8px;
+    background: #0077B5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-container button:hover {
+    background: #005582;
+}
+
+/* Contact Form Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* Contact Form Box */
+.contact-form {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    width: 400px;
+    color: white;
+    text-align: center;
+}
+
+.contact-form h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0077B5;
+}
+
+/* Form Input Fields */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.contact-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0077B5;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background: #005582;
+    transform: scale(1.05);
+}
+/* Success Message Box */
+.success-message {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+    animation: fadeInOut 4s ease-in-out;
+}
+
+/* Success Message Animation */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    10% { opacity: 1; transform: translateY(0px); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+
+/* Responsive Fix for Smaller Screens */
+@media (max-width: 600px) {
+    .chat-button {
+        font-size: 14px;
+        padding: 10px;
+        width: 120px;
+    }
+
+    #chat-toggle-1 {
+        left: 20px;
+    }
+
+    #chat-toggle-2 {
+        right: 20px;
+    }
+
+    .chat-container {
+        width: 250px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
